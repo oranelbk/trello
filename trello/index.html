@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau Trello</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="board" class="board">
+    <div class="column" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="header">À faire</div>
+        <div class="add">
+            <h5>Ajouter une tâche</h5>
+            <button class="add-button" onclick="openModal()">+</button>
+        </div>
+        <div class="card" id="card1" draggable="true" ondragstart="drag(event)">
+            <div class="card-title">Tâche 1</div>
+            <div class="card-description">Description de la Tâche 1</div>
+        </div>
+        <div class="card" id="card2" draggable="true" ondragstart="drag(event)">
+            <div class="card-title">Tâche 2</div>
+            <div class="card-description">Description de la Tâche 2</div>
+        </div>
+        <div class="card" id="card3" draggable="true" ondragstart="drag(event)">
+            <div class="card-title">Tâche 3</div>
+            <div class="card-description">Description de la Tâche 3</div>
+        </div>
+    </div>
+
+    <div class="column" id="inProgress" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="header">En cours</div>
+        <div class="card" id="card4" draggable="true" ondragstart="drag(event)">
+            <div class="card-title">Tâche 4</div>
+            <div class="card-description">Description de la Tâche 4</div>
+        </div>
+        <div class="card" id="card5" draggable="true" ondragstart="drag(event)">
+            <div class="card-title">Tâche 5</div>
+            <div class="card-description">Description de la Tâche 5</div>
+        </div>
+    </div>
+
+    <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="header">Terminé</div>
+        <div class="card" id="card6" draggable="true" ondragstart="drag(event)">
+            <div class="card-title">Tâche 6</div>
+            <div class="card-description">Description de la Tâche 6</div>
+        </div>
+        <div class="card" id="card7" draggable="true" ondragstart="drag(event)">
+            <div class="card-title">Tâche 7</div>
+            <div class="card-description">Description de la Tâche 7</div>
+        </div>
+        <div class="card" id="card8" draggable="true" ondragstart="drag(event)">
+            <div class="card-title">Tâche 8</div>
+            <div class="card-description">Description de la Tâche 8</div>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Ajouter une nouvelle tâche</h2>
+        <input type="text" id="taskTitle" placeholder="Titre de la tâche">
+        <textarea id="taskDescription" placeholder="Description de la tâche"></textarea>
+        <button onclick="addTask()">Ajouter</button>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
